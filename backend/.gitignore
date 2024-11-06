@@ -1,0 +1,43 @@
+# Python/Django specific
+*.pyc
+__pycache__/
+db.sqlite3
+*.log
+
+# Virtual environment
+okc/
+
+# Environment files
+.env
+
+# Django migrations
+**/migrations/
+
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+*$py.class
+
+# macOS
+.DS_Store
+
+# IDE-specific files
+.vscode/
+.idea/
+
+# Coverage reports
+htmlcov/
+.coverage
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Static files
+staticfiles/
+
+# Media files
+media/
+
+# Local settings
+local_settings.py

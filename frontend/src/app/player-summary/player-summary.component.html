@@ -1,0 +1,57 @@
+<div class="player-summary">
+  <h1>Player Summary</h1>
+
+  <div class="player-input">
+    <input type="number" [(ngModel)]="playerId" placeholder="Enter Player ID" />
+    <button (click)="fetchPlayerSummary()">Get Player Summary</button>
+  </div>
+
+  <div *ngIf="playerSummary; else errorTemplate">
+    <h1>{{ playerSummary.name }}</h1>
+
+    <div *ngFor="let game of playerSummary.games" class="game-summary">
+      <h2>Game on {{ game.date }}</h2>
+      <p>
+        <strong>{{ game.isStarter ? "Starter" : "Bench Player" }}</strong>
+      </p>
+      <p><strong>Minutes:</strong> {{ game.minutes }}</p>
+      <p><strong>Points:</strong> {{ game.points }}</p>
+      <p><strong>Assists:</strong> {{ game.assists }}</p>
+      <p><strong>Offensive Rebounds:</strong> {{ game.offensiveRebounds }}</p>
+      <p><strong>Defensive Rebounds:</strong> {{ game.defensiveRebounds }}</p>
+      <p><strong>Steals:</strong> {{ game.steals }}</p>
+      <p><strong>Blocks:</strong> {{ game.blocks }}</p>
+      <p><strong>Turnovers:</strong> {{ game.turnovers }}</p>
+      <p><strong>Offensive Fouls:</strong> {{ game.offensiveFouls }}</p>
+      <p><strong>Defensive Fouls:</strong> {{ game.defensiveFouls }}</p>
+      <p>
+        <strong>Free Throws:</strong> {{ game.freeThrowsMade }} /
+        {{ game.freeThrowsAttempted }}
+      </p>
+      <p>
+        <strong>Two Pointers:</strong> {{ game.twoPointersMade }} /
+        {{ game.twoPointersAttempted }}
+      </p>
+      <p>
+        <strong>Three Pointers:</strong> {{ game.threePointersMade }} /
+        {{ game.threePointersAttempted }}
+      </p>
+
+      <div class="shots">
+        <h3>Shots:</h3>
+        <ul class="shots-list">
+          <li
+            *ngFor="let shot of game.shots"
+            [ngClass]="{ 'shot-make': shot.isMake, 'shot-miss': !shot.isMake }"
+          >
+            {{ shot.description }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #errorTemplate>
+    <h1>{{ errorMessage }}</h1>
+  </ng-template>
+</div>

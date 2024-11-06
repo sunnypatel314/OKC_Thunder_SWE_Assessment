@@ -1,0 +1,74 @@
+.player-summary {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+.player-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.player-input input {
+  width: 80px;
+  padding: 5px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.player-input button {
+  margin-left: 10px;
+  padding: 5px 15px;
+  font-size: 1rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.player-input button:hover {
+  background-color: #2980b9;
+}
+
+.game-summary {
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+  margin-top: 15px;
+}
+
+.shots {
+  margin-top: 10px;
+}
+
+.shots-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.shots-list li {
+  margin-bottom: 5px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  // background-color: #f1f1f1;
+}
+
+.shot-make {
+  background-color: green;
+  color: white;
+}
+
+.shot-miss {
+  background-color: red;
+  color: white;
+}
